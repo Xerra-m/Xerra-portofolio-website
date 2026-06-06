@@ -1,97 +1,77 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Xerra Portofolio</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <title>Xerra | Frontend Developer & Minecraft Enthusiast</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body>
-  <!-- navbar -->
-  <nav class="navbar">
-    <div class="container">
-      <div class="logo">Xerra<span class="highlight">.</span></div>
-      <ul>
-        <li><a href="#about">about</a></li>
-        <li><a href="#project">Project</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+  <!-- nav start -->
+  <nav class="fixed top-0 left-0 w-full z-50">
+    <div class="max-w-full mx-auto px-2 py-2">
+      <div class="flex items-center justify-between backdrop-blur-md bg-slate-800 border-b-2 border-slate-600/40 rounded-2xl px-8 py-3 md:px-14 md:py-8 shadow-xl text-white">
+        <!-- logo -->
+        <div class="text-2xl md:text-4xl font-bold"><a href="#">Xerra<span class="text-emerald-600">.</span></a></div>
+        
+        <!-- hamburger menu -->
+        <button id="navopen" class="md:hidden"><i class="fa-solid fa-bars"></i></button>
+        
+        <!-- desktop -->
+        <ul class="hidden md:flex items-center gap-4 md:text-2xl md:font-semibold">
+          <li><a href="#" class="">Home</a></li>
+          <li><a href="#about" class="">About Me</a></li>
+          <li><a href="#project" class="">Project</a></li>
+          <li><a href="#contact" class="">Contact</a></li>
+        </ul>
+      </div>
     </div>
   </nav>
-  <!-- hero -->
-  <section class="hero">
-    <div class="container">
-      <h4 class="aksen">WELCOME TO MY PORTOFOLIO</h4>
-      <h1>Hi, I'm <span class="highlight">Xerra</span></h1>
-      <p class="desk-hero">Beginner Frontend Developer | Minecraft Builder | Minecraft Server Developer | 3D Model & Skin Artist</p>
-      <a href="#project" class="btn">My Project</a>
-      <a href="contact.html" class="btn-secondary">Contact Me</a>
+  
+  <!-- overlay -->
+  <div id="overlay" class="fixed inset-0 bg-black/50 backdrop-blur-sm hidden z-40"></div>
+  
+  <!-- side bar -->
+  <aside id="sidebar" class="fixed top-0 right-0 h-screen w-72 bg-slate-800 border-l-2 border-slate-600/40 translate-x-full transition-transform duration-300 z-50 px-10 py-4 text-white">
+    <div class="flex items-center justify-between gap-8 pb-4">
+      <div class="text-2xl md:text-4xl font-bold">Xerra<span class="text-emerald-600">.</span></div>
+      <button id="navclose" class="hover:text-gray font-bold">X</button>
     </div>
-  </section>
-  <!-- about -->
-  <section id="about" class="about">
-    <div class="container">
-      <h1>About <span class="highlight">Me</span></h1>
-      <p>Hi, I'm Xerra Magani, Beginner Frontend Developer and Minecraft enthusiast. I love building creative project, developing server, and designing Minecraft 3D models and skins. My goal is to combine creativity and coding to make awesome digital experiences. </p>
-      <p class="current-proj">Currently Managing <span class="highlight2">Nirva SMP Season 1</span> with a 11 member. My focus lies in server optimization, building, 3D model & skin</p>
-    </div>
-  </section>
-  <!-- project -->
-  <section id="project" class="sel-proj">
-    <div class="container">
-      <h1>Selected <span class="highlight">Project</span></h1>
-      <p>A showcase of my recent work in Frontend Developing, Minecraft Building, Server Developing, 3D Model and skin making</p>
-      <div class="project-grid">
-        <div class="project-card">
-          <div class="icon-wrap">N</div>
-          <span class="proj-name">NEA (Nirva Elite Academy)</span>
-          <div class="proj-category">Minecraft Map</div>
-          <p>1:1 scale minecraft map of my school in real life</p>
-          <div class="skill-tag">
-            <span>World Edit</span>
-          </div>
-        </div>
-        <div class="project-card">
-          <div class="icon-wrap">PW</div>
-          <span class="proj-name">Portofolio Website</span>
-          <div class="proj-category">Website</div>
-          <p>My Portofolio Website</p>
-          <div class="skill-tag">
-            <span>HTML</span>
-            <span>CSS</span>
-          </div>
-        </div>
-        <div class="project-card">
-          <div class="icon-wrap">NS</div>
-          <span class="proj-name">Nirva SMP Season 1 - coming soon</span>
-          <div class="proj-category">Minecraft Server</div>
-          <p>Psychology-themed Minecraft roleplay server</p>
-          <div class="skill-tag">
-            <span>Skript</span>
-            <span>Denizen</span>
-            <span>Worldedit</span>
-            <span>mythicmobs</span>
-            <span>mythiclibs</span>
-          </div>
-        </div>
+    <ul class="bg-black/20 flex flex-col p-6 gap-8 items-center font-bold rounded-lg">
+      <li><a id="navHome" href="#" class="">Home</a></li>
+      <li><a id="navAbout" href="#about" class="">About Me</a></li>
+      <li><a id="navProj" href="#project" class="">Project</a></li>
+      <li><a id="navCont" href="#contact" class="">Contact</a></li>
+    </ul>
+  </aside>
+  
+  <!-- nav end -->
+  
+  <!-- hero start -->
+  <section id="hero">
+    <div class="bg-gradient-to-br from-slate-950 to-[#1C8C57] max-w-full flex flex-col justify-center px-8 py-30 md:px-14 md:py-100">
+      <h4 class="bg-slate-800 border-1 border-[#1C8C57] rounded-lg text-white font-semibold p-2 w-max">WELCOME TO MY PORTFOLIO</h4>
+      <h1 class="text-3xl md:text-5xl font-semibold text-white my-10">Hi, I'm <span class="text-[#1C8C57]">Xerra</span></h1>
+      <p class="text-xl md:text-3xl text-gray-300 mb-14">Beginner Frontend Developer | Minecraft Builder | Minecraft Server Developer | 3D Model & Skin Artist</p>
+      <div class="flex gap-5 text-white">
+        <a href="#project" class="bg-[#1C8C57] rounded-lg px-6 py-2 border-2 border-black/20 hover:bg-transparent hover:border-[#1C8C57] transition-all duration-300 md:text-2xl">My Project</a>
+        <a href="#contact" class="bg-transparent rounded-lg px-6 py-2 border-2 border-[#1C8C57] hover:bg-[#1C8C57] hover:border-black/20 transition-all duration-300 md:text-2xl">Contact Me</a>
       </div>
     </div>
   </section>
-  <!-- contact -->
-  <section id="contact" class="contact">
-    <div class="container">
-      <h2>Contact <span class="highlight">Me</span></h2>
-      <p>You can reach me via email at <a href="mailto:xerra@nirva.id">xerra@nirva.id</a></p>
+  <!-- hero end -->
+  
+  <!-- about start -->
+  <section id="about">
+    <div class="bg-slate-900 border-t-2 border-slate-800 flex flex-col justify-center px-8 py-2 md:px-14 md:py-6">
+      <h1 class="text-3xl md:text-5xl font-semibold text-white my-10">About <span class="text-[#1C8C57]">Me</span></h1>
+      <p class="text-xl md:text-3xl text-gray-300 mb-10">Hi, I'm Xerra Magani, Beginner Frontend Developer and Minecraft enthusiast. I love building creative project, developing server, and designing Minecraft 3D models and skins. My goal is to combine creativity and coding to make awesome digital experiences. Currently Managing Nirva SMP Season 1 with a 11 member. My focus lies in server optimization, building, 3D model & skin</p>
     </div>
   </section>
-  <!-- footer -->
-  <footer class="footer">
-    <div class="container">
-      <p>© 2026 Xerra. All rights reserved.</p>
-    </div>
-  </footer>
+  <!-- about end -->
+  
+  <script src="main.js"></script>
 </body>
 </html>
