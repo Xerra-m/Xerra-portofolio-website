@@ -1,128 +1,342 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" class="scroll-smooth">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Xerra | Frontend Developer & Minecraft Enthusiast</title>
-  <link rel="stylesheet" href="./dist/css/styles.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-</head>
-<body>
-  <!-- nav start -->
-  <nav class="fixed top-0 left-0 w-full z-50">
-    <div class="max-w-full mx-auto px-2 py-2">
-      <div class="flex items-center justify-between backdrop-blur-md bg-slate-800 border-b-2 border-slate-600/40 rounded-2xl px-8 py-3 md:px-14 md:py-8 shadow-xl text-white">
-        <!-- logo -->
-        <div class="text-2xl md:text-4xl font-bold"><a href="#">Xerra<span class="text-emerald-600">.</span></a></div>
-        
-        <!-- hamburger menu -->
-        <button id="navopen" class="md:hidden"><i class="fa-solid fa-bars"></i></button>
-        
-        <!-- desktop -->
-        <ul class="hidden md:flex items-center gap-4 md:text-2xl md:font-semibold">
-          <li><a href="#" class="">Home</a></li>
-          <li><a href="#about" class="">About Me</a></li>
-          <li><a href="#project" class="">Project</a></li>
-          <li><a href="#contact" class="">Contact</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-  
-  <!-- overlay -->
-  <div id="overlay" class="fixed inset-0 bg-black/50 backdrop-blur-sm hidden z-40"></div>
-  
-  <!-- side bar -->
-  <aside id="sidebar" class="fixed top-0 right-0 h-screen w-72 bg-slate-800 border-l-2 border-slate-600/40 translate-x-full transition-transform duration-300 z-50 px-10 py-4 text-white">
-    <div class="flex items-center justify-between gap-8 pb-4">
-      <div class="text-2xl md:text-4xl font-bold">Xerra<span class="text-emerald-600">.</span></div>
-      <button id="navclose" class="hover:text-gray font-bold">X</button>
-    </div>
-    <ul class="bg-black/20 flex flex-col p-6 gap-8 items-center font-bold rounded-lg">
-      <li><a id="navHome" href="#" class="">Home</a></li>
-      <li><a id="navAbout" href="#about" class="">About Me</a></li>
-      <li><a id="navProj" href="#project" class="">Project</a></li>
-      <li><a id="navCont" href="#contact" class="">Contact</a></li>
-    </ul>
-  </aside>
-  
-  <!-- nav end -->
-  
-  <!-- hero start -->
-  <section id="hero">
-    <div class="bg-gradient-to-br from-slate-950 to-[#1C8C57] max-w-full flex flex-col justify-center px-8 py-30 md:px-14 md:py-100">
-      <h4 class="bg-slate-800 border-1 border-[#1C8C57] rounded-lg text-white font-semibold p-2 w-max">WELCOME TO MY PORTFOLIO</h4>
-      <h1 class="text-3xl md:text-5xl font-semibold text-white my-10">Hi, I'm <span class="text-[#1C8C57]">Xerra</span></h1>
-      <p class="text-xl md:text-3xl text-gray-300 mb-14">Beginner Frontend Developer | Minecraft Builder | Minecraft Server Developer | 3D Model & Skin Artist</p>
-      <div class="flex gap-5 text-white">
-        <a href="#project" class="bg-[#1C8C57] rounded-lg px-6 py-2 border-2 border-black/20 hover:bg-transparent hover:border-[#1C8C57] transition-all duration-300 md:text-2xl">My Project</a>
-        <a href="#contact" class="bg-transparent rounded-lg px-6 py-2 border-2 border-[#1C8C57] hover:bg-[#1C8C57] hover:border-black/20 transition-all duration-300 md:text-2xl">Contact Me</a>
-      </div>
-    </div>
-  </section>
-  <!-- hero end -->
-  
-  <!-- about start -->
-  <section id="about">
-    <div class="bg-slate-900 border-t-2 border-slate-800 flex flex-col justify-center px-8 py-6 md:px-14 md:py-10">
-      <h1 class="text-3xl md:text-5xl font-semibold text-white my-10 border-b-2 border-[#1C8C57]/60 md:border-b-4 w-max">About <span class="text-[#1C8C57]">Me</span></h1>
-      <p class="text-xl md:text-3xl text-gray-300 mb-10">Hi, I'm Xerra Magani, Beginner Frontend Developer and Minecraft enthusiast. I love building creative project, developing server, and designing Minecraft 3D models and skins. My goal is to combine creativity and coding to make awesome digital experiences. Currently Developing <span class="text-[#1C8C57]">Nirva SMP Season 1</span>, a Minecraft series project with 15 member. My focus lies in server optimization, building, 3D model & skin</p>
-      <h1 class="text-lg text-gray-600 font-bold mb-4">Core Skill</h1>
-      <div class="flex flex-col w-full mb-5 font-sans gap-6">
-        <!-- minecraft server development -->
-        <div>
-          <div class="flex justify-between mb-3 text-xs md:text-sm text-gray-300 font-medium">
-            <span class="tracking-wide">Minecraft Server Development</span>
-            <span>75%</span>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Xerra | Frontend Developer & Minecraft Enthusiast</title>
+    <link rel="stylesheet" href="./dist/css/styles.css" />
+    <script src="https://unpkg.com/lucide@latest"></script>
+  </head>
+  <body>
+    <!-- nav start -->
+    <nav class="fixed top-0 left-0 w-full z-50">
+      <div class="max-w-full mx-auto px-2 py-2">
+        <div
+          class="flex items-center justify-between backdrop-blur-md bg-slate-800 border-b-2 border-slate-600/40 rounded-2xl px-8 py-3 md:px-14 md:py-8 shadow-xl text-white"
+        >
+          <!-- logo -->
+          <div class="text-2xl md:text-4xl font-bold">
+            <a href="#">Xerra<span class="text-emerald-600">.</span></a>
           </div>
-          <div class="w-full h-[2px] bg-neutral-800 relative flex items-center">
-            <div class="h-full bg-[#1C8C57] relative w-[75%] flex items-center justify-end">
-              <div class="w-2 h-2 md:w-2.5 md:h-2.5 bg-[#1C8C57] rounded-full absolute right-0 top-1/2 -translate-y-1/2 shadow-[0_0_8px_rgba(28,140,87,0.6)]"></div>
+
+          <!-- hamburger menu -->
+          <button id="navopen" class="md:hidden">
+            <i data-lucide="menu"></i>
+          </button>
+
+          <!-- desktop -->
+          <ul
+            class="hidden md:flex items-center gap-4 md:text-2xl md:font-semibold"
+          >
+            <li><a href="#" class="">Home</a></li>
+            <li><a href="#about" class="">About Me</a></li>
+            <li><a href="#project" class="">Project</a></li>
+            <li><a href="#contact" class="">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- overlay -->
+    <div
+      id="overlay"
+      class="fixed inset-0 bg-black/50 backdrop-blur-sm hidden z-40"
+    ></div>
+
+    <!-- side bar -->
+    <aside
+      id="sidebar"
+      class="fixed top-0 right-0 h-screen w-72 bg-slate-800 border-l-2 border-slate-600/40 translate-x-full transition-transform duration-300 z-50 px-10 py-4 text-white"
+    >
+      <div class="flex items-center justify-between gap-8 pb-4">
+        <div class="text-2xl md:text-4xl font-bold">
+          Xerra<span class="text-emerald-600">.</span>
+        </div>
+        <button id="navclose">
+          <i data-lucide="X"></i>
+        </button>
+      </div>
+      <ul
+        class="bg-black/20 flex flex-col p-6 gap-8 items-center font-bold rounded-lg"
+      >
+        <li><a id="navHome" href="#" class="">Home</a></li>
+        <li><a id="navAbout" href="#about" class="">About Me</a></li>
+        <li><a id="navProj" href="#project" class="">Project</a></li>
+        <li><a id="navCont" href="#contact" class="">Contact</a></li>
+      </ul>
+    </aside>
+
+    <!-- nav end -->
+
+    <!-- hero start -->
+    <section id="hero">
+      <div
+        class="bg-gradient-to-br from-slate-950 to-[#1C8C57] max-w-full flex flex-col justify-center px-8 py-30 md:px-14 md:py-100"
+      >
+        <h4
+          class="bg-slate-800 border-1 border-[#1C8C57] rounded-full text-white font-semibold p-2 w-max"
+        >
+          WELCOME TO MY PORTFOLIO
+        </h4>
+        <h1 class="text-3xl md:text-5xl font-semibold text-white my-10">
+          Hi, I'm <span class="text-[#1C8C57]">Xerra</span>
+        </h1>
+        <p class="text-xl md:text-3xl text-gray-300 mb-14">
+          Beginner Frontend Developer | Minecraft Builder | Minecraft Server
+          Developer | 3D Model & Skin Artist
+        </p>
+        <div class="flex gap-5 text-white">
+          <a
+            href="#project"
+            class="bg-[#1C8C57] rounded-lg px-6 py-2 border-2 border-black/20 hover:bg-transparent hover:border-[#1C8C57] transition-all duration-300 md:text-2xl"
+            >My Project</a
+          >
+          <a
+            href="#contact"
+            class="bg-transparent rounded-lg px-6 py-2 border-2 border-[#1C8C57] hover:bg-[#1C8C57] hover:border-black/20 transition-all duration-300 md:text-2xl"
+            >Contact Me</a
+          >
+        </div>
+      </div>
+    </section>
+    <!-- hero end -->
+
+    <!-- about start -->
+    <section id="about">
+      <div
+        class="bg-slate-900 border-t-2 border-slate-800 flex flex-col justify-center px-8 py-6 md:px-14 md:py-10"
+      >
+        <h1
+          class="text-3xl md:text-5xl font-semibold text-white my-10 border-b-2 border-[#1C8C57]/60 md:border-b-4 w-max md:my-18"
+        >
+          About <span class="text-[#1C8C57]">Me</span>
+        </h1>
+        <p class="text-xl md:text-3xl text-gray-300 mb-10">
+          Hi, I'm Xerra Magani, Beginner Frontend Developer and Minecraft
+          enthusiast. I love building creative project, developing server, and
+          designing Minecraft 3D models and skins. My goal is to combine
+          creativity and coding to make awesome digital experiences. Currently
+          Developing <span class="text-[#1C8C57]">Nirva SMP Season 1</span>, a
+          Minecraft series project with 15 member. My focus lies in server
+          optimization, building, 3D model & skin
+        </p>
+        <h1 class="text-lg text-gray-600 font-bold mb-4">Core Skill</h1>
+        <div class="flex flex-col w-full mb-5 font-sans gap-6">
+          <!-- minecraft server development -->
+          <div>
+            <div
+              class="flex justify-between mb-3 text-xs md:text-sm text-gray-300 font-medium"
+            >
+              <span class="tracking-wide">Minecraft Server Development</span>
+              <span>75%</span>
+            </div>
+            <div
+              class="w-full h-[2px] bg-neutral-800 relative flex items-center"
+            >
+              <div
+                class="h-full bg-[#1C8C57] relative w-[75%] flex items-center justify-end"
+              >
+                <div
+                  class="w-2 h-2 md:w-2.5 md:h-2.5 bg-[#1C8C57] rounded-full absolute right-0 top-1/2 -translate-y-1/2 shadow-[0_0_8px_rgba(28,140,87,0.6)]"
+                ></div>
+              </div>
+            </div>
+          </div>
+          <!-- 3d model & skin making -->
+          <div>
+            <div
+              class="flex justify-between mb-3 text-xs md:text-sm text-gray-300 font-medium"
+            >
+              <span class="tracking-wide">3D Model & Skin Making</span>
+              <span>60%</span>
+            </div>
+            <div
+              class="w-full h-[2px] bg-neutral-800 relative flex items-center"
+            >
+              <div
+                class="h-full bg-[#1C8C57] relative w-[60%] flex items-center justify-end"
+              >
+                <div
+                  class="w-2 h-2 md:w-2.5 md:h-2.5 bg-[#1C8C57] rounded-full absolute right-0 top-1/2 -translate-y-1/2 shadow-[0_0_8px_rgba(28,140,87,0.6)]"
+                ></div>
+              </div>
+            </div>
+          </div>
+          <!-- frontend development -->
+          <div>
+            <div
+              class="flex justify-between mb-3 text-xs md:text-sm text-gray-300 font-medium"
+            >
+              <span class="tracking-wide">Frontend Development</span>
+              <span>40%</span>
+            </div>
+            <div
+              class="w-full h-[2px] bg-neutral-800 relative flex items-center"
+            >
+              <div
+                class="h-full bg-[#1C8C57] relative w-[40%] flex items-center justify-end"
+              >
+                <div
+                  class="w-2 h-2 md:w-2.5 md:h-2.5 bg-[#1C8C57] rounded-full absolute right-0 top-1/2 -translate-y-1/2 shadow-[0_0_8px_rgba(28,140,87,0.6)]"
+                ></div>
+              </div>
             </div>
           </div>
         </div>
-        <!-- 3d model & skin making -->
-        <div>
-          <div class="flex justify-between mb-3 text-xs md:text-sm text-gray-300 font-medium">
-            <span class="tracking-wide">3D Model & Skin Making</span>
-            <span>60%</span>
-          </div>
-          <div class="w-full h-[2px] bg-neutral-800 relative flex items-center">
-            <div class="h-full bg-[#1C8C57] relative w-[60%] flex items-center justify-end">
-              <div class="w-2 h-2 md:w-2.5 md:h-2.5 bg-[#1C8C57] rounded-full absolute right-0 top-1/2 -translate-y-1/2 shadow-[0_0_8px_rgba(28,140,87,0.6)]"></div>
-            </div>
-          </div>
+      </div>
+    </section>
+    <!-- about end -->
+
+    <!-- project start -->
+    <section id="project">
+      <div
+        class="bg-slate-800 border-t-2 border-slate-600 flex flex-col px-8 py-6 md:px-14 md:py-10"
+      >
+        <div class="flex flex-col justify-center items-center text-center">
+          <h1
+            class="text-3xl md:text-5xl font-semibold text-white my-10 border-b-2 border-[#1C8C57]/60 md:border-b-4 w-max"
+          >
+            Selected <span class="text-[#1C8C57]">Project</span>
+          </h1>
+          <p class="text-xl md:text-3xl text-gray-400 mb-10">
+            A showcase of my work in web development, minecraft series
+            development, and minecraft building
+          </p>
         </div>
-        <!-- frontend development -->
-        <div>
-          <div class="flex justify-between mb-3 text-xs md:text-sm text-gray-300 font-medium">
-            <span class="tracking-wide">Frontend Development</span>
-            <span>40%</span>
-          </div>
-          <div class="w-full h-[2px] bg-neutral-800 relative flex items-center">
-            <div class="h-full bg-[#1C8C57] relative w-[40%] flex items-center justify-end">
-              <div class="w-2 h-2 md:w-2.5 md:h-2.5 bg-[#1C8C57] rounded-full absolute right-0 top-1/2 -translate-y-1/2 shadow-[0_0_8px_rgba(28,140,87,0.6)]"></div>
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8 md:mb-14"
+        >
+          <div
+            class="bg-slate-900 border border-[#1C8C57] border-2 rounded-2xl p-6 transition-all duration-300 hover:border-emerald-500/50 hover:shadow-[0_0_15px_rgba(16,185,129,0.1)]"
+          >
+            <div class="flex items-center justify-between mb-6">
+              <div
+                class="flex items-center justify-center w-12 h-12 bg-zinc-950 border border-[#1C8C57] rounded-xl text-white"
+              >
+                <i data-lucide="globe" class="w-5 h-5"></i>
+              </div>
+              <span
+                class="text-xs font-semibold tracking-wide text-zinc-500 uppercase"
+                >Website</span
+              >
             </div>
+            <h3 class="text-xl font-bold text-zinc-100 mb-3">
+              Portfolio Website
+            </h3>
+            <p class="text-sm text-zinc-400 leading-relaxed mb-6 line-clamp-3">
+              A modern personal portfolio showcasing my projects, skills, and
+              development journey. Built with a focus on performance, responsive
+              design, and user experience.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span
+                class="px-3 py-1 text-xs rounded-lg bg-[#141414] border border-[#1C8C57] text-white"
+                >Javascript</span
+              >
+              <span
+                class="px-3 py-1 text-xs rounded-lg bg-[#141414] border border-[#1C8C57] text-white"
+                >Tailwind CSS</span
+              >
+            </div>
+            <a
+              href="#"
+              class="inline-flex items-center gap-2 text-sm font-medium text-zinc-400 hover:text-[#1C8C57] transition-color group"
+              >View Project
+              <i
+                data-lucide="external-link"
+                class="w-4 h-4 text-zinc-500 group-hover:text-[#1C8C57] transition-color"
+              ></i
+            ></a>
+          </div>
+          <div
+            class="bg-slate-900 border border-[#1C8C57] border-2 rounded-2xl p-6 transition-all duration-300 hover:border-emerald-500/50 hover:shadow-[0_0_15px_rgba(16,185,129,0.1)]"
+          >
+            <div class="flex items-center justify-between mb-6">
+              <div
+                class="flex items-center justify-center w-12 h-12 bg-zinc-950 border border-[#1C8C57] rounded-xl text-white"
+              >
+                <i data-lucide="map-pinned" class="w-5 h-5"></i>
+              </div>
+              <span
+                class="text-xs font-semibold tracking-wide text-zinc-500 uppercase"
+                >Minecraft Map</span
+              >
+            </div>
+            <h3 class="text-xl font-bold text-zinc-100 mb-3">NEA Map</h3>
+            <p class="text-sm text-zinc-400 leading-relaxed mb-6 line-clamp-3">
+              The official world map custom-built for Nirva SMP Roleplay Season
+              1. Adapted from a real-life school layout, this map serves as the
+              main stage for the series' story, featuring fully detailed
+              classrooms, secrets, and optimized spaces for filming.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span
+                class="px-3 py-1 text-xs rounded-lg bg-[#141414] border border-[#1C8C57] text-white"
+                >World Edit</span
+              >
+              <span
+                class="px-3 py-1 text-xs rounded-lg bg-[#141414] border border-[#1C8C57] text-white"
+                >Voxel Sniper</span
+              >
+            </div>
+            <a
+              href="#"
+              class="inline-flex items-center gap-2 text-sm font-medium text-zinc-400 hover:text-[#1C8C57] transition-color group"
+              >View Project
+              <i
+                data-lucide="external-link"
+                class="w-4 h-4 text-zinc-500 group-hover:text-[#1C8C57] transition-color"
+              ></i
+            ></a>
+          </div>
+          <div
+            class="bg-slate-900 border border-[#1C8C57] border-2 rounded-2xl p-6 transition-all duration-300 hover:border-emerald-500/50 hover:shadow-[0_0_15px_rgba(16,185,129,0.1)]"
+          >
+            <div class="flex items-center justify-between mb-6">
+              <div
+                class="flex items-center justify-center w-12 h-12 bg-zinc-950 border border-[#1C8C57] rounded-xl text-white"
+              >
+                <i data-lucide="brain-circuit" class="w-5 h-5"></i>
+              </div>
+              <span
+                class="text-xs font-semibold tracking-wide text-zinc-500 uppercase"
+                >Coming Soon</span
+              >
+            </div>
+            <h3 class="text-xl font-bold text-zinc-100 mb-3">
+              Nirva SMP season 1
+            </h3>
+            <p class="text-sm text-zinc-400 leading-relaxed mb-6 line-clamp-3">
+              An immersive psychological Minecraft roleplay series inspired by
+              Classroom of the Elite. As the lead creator and writer, I
+              orchestrated complex plotlines, mind games, and faction-driven
+              mechanics that challenged players' trust and strategic thinking.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span
+                class="px-3 py-1 text-xs rounded-lg bg-[#141414] border border-[#1C8C57] text-white"
+                >Denizen</span
+              >
+              <span
+                class="px-3 py-1 text-xs rounded-lg bg-[#141414] border border-[#1C8C57] text-white"
+                >Skript</span
+              >
+              <span
+                class="px-3 py-1 text-xs rounded-lg bg-[#141414] border border-[#1C8C57] text-white"
+                >Mythicmobs</span
+              >
+            </div>
+            <p class="text-sm font-medium text-zinc-400">In Development</p>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-  <!-- about end -->
-  
-  <!-- project start -->
-  <section id="project">
-    <div class="bg-slate-800 border-t-2 border-slate-600 flex flex-col px-8 py-2 md:px-14 md:py-6">
-      <div class="flex flex-col justify-center items-center text-center">
-        <h1 class="text-3xl font-semibold text-white my-10 border-b-2 border-[#1C8C57]/60 md:border-b-4 w-max">Selected <span class="text-[#1C8C57]">Project</span></h1>
-        <p class="text-xl md:text-3xl text-gray-400 mb-10">A showcase of my work in web development, minecraft series development, and minecraft building</p>
-      </div>
-    </div>
-  </section>
-  
-  <!-- project end -->
-  
-  <script src="main.js"></script>
-</body>
+    </section>
+
+    <!-- project end -->
+    <script src="main.js"></script>
+    <script>
+      lucide.createIcons();
+    </script>
+  </body>
 </html>
